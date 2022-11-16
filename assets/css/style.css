@@ -79,6 +79,7 @@ h2 {
 
 .choices {
   padding: 30px;
+  min-width: 800px;
 }
 .choices button {
   display: block;

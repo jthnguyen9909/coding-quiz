@@ -19,4 +19,31 @@ var questionsList = [
     choices: ["JavaScript", "terminal", "for loops", "console.log"],
     answer: "console.log",
   },
+
+  {
+    title: "Inside which HTML element do we put the JavaScript file?",
+    choices: ["script", "js", "json", "footer"],
+    answer: "script",
+  },
+
+  {
+    title: "How can you add a comment in JavaScript?",
+    choices: [
+      "<!--This is a comment-->",
+      "//This is a comment",
+      "'This is a comment",
+      "/*This is a comment*/",
+    ],
+    answer: "//This is a comment",
+  },
+  {
+    title: "The content of the page shows up here?",
+    choices: ["head", "body", "stylesheet", "folder"],
+    answer: "body",
+  },
+  {
+    title: "What does CSS stand for?",
+    choices: ["colorful style sheets", "creative style sheets", "cascading style sheets", "computer style sheets"],
+    answer: "cascading style sheets",
+  },
 ];

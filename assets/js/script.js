@@ -10,7 +10,7 @@ var timerFunction;
 var currentQuestionIndex = 0;
 
 // starting time
-var timerCount = 100;
+var timerCount = 3;
 
 // sound effects
 var sfxRight = new Audio("assets/sfx/right.m4r");
@@ -86,6 +86,18 @@ function choiceClick(event) {
     // plays wrong sound effect
     sfxWrong.play();
 
+    // ends game if counter reaches zero
+    if (timerCount <= 0) {
+      timerCount = 0;
+      var failedEl = document.querySelector(".failed");
+      failedEl.removeAttribute("class", "hide");
+
+      failedEl.textContent = "You got 0 points... Did you even try?";
+
+      sfxFailed.play();
+      quizEnd();
+    }
+
     // updates timer counter after subtraction
     timerEl.textContent = timerCount;
   }
@@ -133,10 +145,6 @@ function startTimer() {
 
     sfxFailed.play();
 
-    // ends game if counter reaches zero
-    if (timerCount < 0) {
-      timerCount = 0;
-    }
     // updates timer counter
     timerEl.textContent = timerCount;
     quizEnd();
