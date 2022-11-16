@@ -43,7 +43,12 @@ var questionsList = [
   },
   {
     title: "What does CSS stand for?",
-    choices: ["colorful style sheets", "creative style sheets", "cascading style sheets", "computer style sheets"],
+    choices: [
+      "colorful style sheets",
+      "creative style sheets",
+      "cascading style sheets",
+      "computer style sheets",
+    ],
     answer: "cascading style sheets",
   },
 ];
