@@ -24,12 +24,13 @@ sfxFailed.volume = 0.2;
 
 // start game functions
 function startGame() {
+  // hides starting card
   startCardEl.setAttribute("class", "hide");
-
+  // displays question card
   questionCardEl.removeAttribute("class", "hide");
-
+  // start timer function
   timerFunction = setInterval(startTimer, 1000);
-
+  // updates counter with starting time
   timerEl.textContent = timerCount;
 
   getQuestions();
@@ -136,13 +137,12 @@ function startTimer() {
   timerCount--;
   timerEl.textContent = timerCount;
 
-  // in the case that you score a 0
+  // in the case that timer runs out
   if (timerCount <= 0) {
     var failedEl = document.querySelector(".failed");
     failedEl.removeAttribute("class", "hide");
 
     failedEl.textContent = "You got 0 points... Did you even try?";
-
     sfxFailed.play();
 
     // updates timer counter

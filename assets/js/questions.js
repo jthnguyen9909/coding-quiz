@@ -1,3 +1,4 @@
+// object array to store attributes of each question
 var questionsList = [
   {
     title:
