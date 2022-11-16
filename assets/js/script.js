@@ -10,7 +10,7 @@ var timerFunction;
 var currentQuestionIndex = 0;
 
 // starting time
-var timerCount = 100;
+var timerCount = questionsList.length * 15;
 
 // sound effects
 var sfxRight = new Audio("assets/sfx/right.m4r");
