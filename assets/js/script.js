@@ -10,7 +10,17 @@ var timerFunction;
 var currentQuestionIndex = 0;
 
 // starting time
-var timerCount = 50;
+var timerCount = 100;
+
+// sound effects
+var sfxRight = new Audio("assets/sfx/right.m4r");
+var sfxWrong = new Audio("assets/sfx/wrong.m4r");
+var sfxFailed = new Audio("assets/sfx/failed.m4r");
+
+// set audio volume
+sfxRight.volume = 0.2;
+sfxWrong.volume = 0.2;
+sfxFailed.volume = 0.2;
 
 // start game functions
 function startGame() {
@@ -63,22 +73,25 @@ function choiceClick(event) {
   if (buttonEl.value === questionsList[currentQuestionIndex].answer) {
     answerEl.textContent =
       "Corrent! The answer was: " + questionsList[currentQuestionIndex].answer;
+
+    sfxRight.play();
   }
 
   // if the answer chosen is incorrect
   if (buttonEl.value !== questionsList[currentQuestionIndex].answer) {
     timerCount -= 15;
 
-    answerEl.textContent = "Wrong! Try to study a bit more and try again!";
-    if (timerCount < 0) {
-      timerCount = 0;
-    }
+    answerEl.textContent = "Wrong!";
 
+    // plays wrong sound effect
+    sfxWrong.play();
+
+    // updates timer counter after subtraction
     timerEl.textContent = timerCount;
   }
 
   // displays whether answer is correct or not for 1 second
-  answerEl.setAttribute("class", "answer");
+  answerEl.removeAttribute("class", "hide");
   setTimeout(function () {
     answerEl.setAttribute("class", "hide");
   }, 1000);
@@ -86,8 +99,8 @@ function choiceClick(event) {
   // moves on to next question
   currentQuestionIndex++;
 
-  // ends quiz if timer reaches end or run out of questions
-  if (timerCount <= 0 || currentQuestionIndex === questionsList.length) {
+  // ends quiz if out of questions
+  if (currentQuestionIndex === questionsList.length) {
     quizEnd();
   } else {
     getQuestions();
@@ -110,7 +123,22 @@ function quizEnd() {
 function startTimer() {
   timerCount--;
   timerEl.textContent = timerCount;
+
+  // in the case that you score a 0
   if (timerCount <= 0) {
+    var failedEl = document.querySelector(".failed");
+    failedEl.removeAttribute("class", "hide");
+
+    failedEl.textContent = "You got 0 points... Did you even try?";
+
+    sfxFailed.play();
+
+    // ends game if counter reaches zero
+    if (timerCount < 0) {
+      timerCount = 0;
+    }
+    // updates timer counter
+    timerEl.textContent = timerCount;
     quizEnd();
   }
 }
