@@ -11,4 +11,4 @@ The application can be started by clicking on the Start Quiz button. The user wi
 
 https://jthnguyen9909.github.io/coding-quiz/
 
-![Alt text](/assets/images/application-screenshot.jpeg?raw=true "Application Screenshot")
+![Alt text](/assets/images/deployment-screenshot.png?raw=true "Application Screenshot")
