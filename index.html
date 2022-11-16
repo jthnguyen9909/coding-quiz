@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,3 +10,56 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
+<body>
+
+  <!-- Header with time and link to highscores -->
+  <div class="corner" id="highscores"> <a href="highscores.html">Highscores</a></div>
+
+  <div class="corner" id="timer">Time Left: <span id="time-left">0</span></div>
+
+  <main>
+
+    <!-- start quiz section -->
+    <section class="start-game-card">
+
+      <h1>Coding Quiz</h1>
+      <p>
+        Challenge yourself by answering these code-related questions within the time limit! Try not
+        to answer any wrong, otherwise you will suffer a time and score penalty.
+      </p>
+      <button id="start-button">Start Quiz</button>
+
+    </section>
+
+
+    <!-- quiz and answers section -->
+    <section class="question-card hide">
+      <h2 class="question-header"></h2>
+      <div class="choices"></div>
+
+    </section>
+
+
+    <!-- end quiz section -->
+    <section class="quiz-finished hide">
+      <h2 id="quiz-finished">All done!</h2>
+      <p>Your final score is <span id="final-score"></span>.</p>
+      <p>
+        Enter your initials: <input type="text" id="initial-input" />
+        <button id="submit-button">Submit</button>
+      </p>
+
+    </section>
+
+    <div class="answer hide"></div>
+
+
+  </main>
+
+
+  <script src="./assets/js/questions.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
