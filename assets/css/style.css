@@ -1,18 +1,15 @@
-html{
-  margin:0;
-  padding:0;
-  max-height:100vh;
-  overflow:hidden;
+html {
+  margin: 0;
+  padding: 0;
+  max-height: 100vh;
+  overflow: hidden;
 }
-
 
 body {
   background: linear-gradient(0deg, rgb(0, 45, 87) 0%, white 63%);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-
   height: 100%;
-  
 }
 
 .hide {
@@ -106,7 +103,7 @@ h2 {
 /* Final Score */
 #quiz-finished {
   margin-bottom: 30px;
-  margin-top:100px;
+  margin-top: 100px;
 }
 
 .quiz-finished p {
